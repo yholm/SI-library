@@ -1,6 +1,6 @@
 #include "si_units.h"
 #include <cassert>
-#include <typeinfo>
+#include <iostream>
 
 void add() {
     auto x = Meter(10.0);
@@ -8,6 +8,7 @@ void add() {
     auto result = x + y;
 
     assert(result == Meter(15.0));
+    std::cout << "Addition passed\n";
 }
 
 void sub() {
@@ -16,6 +17,7 @@ void sub() {
     auto result = x - y;
 
     assert(result == Meter(5.0));
+    std::cout << "Subtraction passed\n";
 }
 
 void mul() {
@@ -30,6 +32,7 @@ void mul() {
     auto result2 = a * 5.0;
 
     assert(result2 == Second(25.0));
+    std::cout << "Multiplication passed\n";
 }
 
 void div() {
@@ -44,6 +47,7 @@ void div() {
     auto result2 = a / 5.0;
 
     assert(result2 == Second(1.0));
+    std::cout << "Division passed\n";
 }
 
 int main() {
@@ -51,4 +55,5 @@ int main() {
     sub();
     mul();
     div();
+    std::cout << "\n";
 }

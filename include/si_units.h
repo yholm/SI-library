@@ -57,4 +57,32 @@ using Kelvin    = SIUnit<Temperature>;
 using Mole      = SIUnit<Amount>;
 using Candela   = SIUnit<LuminousIntensity>;
 
+static Second operator"" _s(long double val) {
+	return Second(static_cast<float>(val));
+}
+
+static Meter operator"" _m(long double val) {
+	return Meter(static_cast<double>(val));
+}
+
+static Kilogram operator"" _kg(long double val) {
+	return Kilogram(static_cast<double>(val));
+}
+
+static Ampere operator"" _A(long double val) {
+	return Ampere(static_cast<double>(val));
+}
+
+static Kelvin operator"" _K(long double val) {
+	return Kelvin(static_cast<double>(val));
+}
+
+static Mole operator"" _mol(long double val) {
+	return Mole(static_cast<double>(val));
+}
+
+static Candela operator"" _cd(long double val) {
+	return Candela(static_cast<double>(val));
+}
+
 #endif
