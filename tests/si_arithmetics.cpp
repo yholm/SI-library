@@ -40,8 +40,8 @@ void div() {
     auto y = Second(2.0);
     auto result = x / y;
 
-    using Acceleration = Dimensions<-1, 1, 0, 0, 0, 0, 0>;
-    assert(result == SIUnit<Acceleration>(10.0));
+    using Speed = Dimensions<-1, 1, 0, 0, 0, 0, 0>;
+    assert(result == SIUnit<Speed>(10.0));
 
     auto a = Second(5.0);
     auto result2 = a / 5.0;
