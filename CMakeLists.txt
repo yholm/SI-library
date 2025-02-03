@@ -14,4 +14,9 @@ set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
 target_include_directories(si_units PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
+add_executable(tests tests/si_tests.cpp)
+target_link_libraries(tests PRIVATE si_units)
+
+add_test(NAME SIUnitTests COMMAND tests)
+
 include(CPack)
