@@ -21,6 +21,8 @@ struct Dimensions {
 
         template <typename Other>
         using divide = Dimensions<T - Other::T, L - Other::L, M - Other::M, EC - Other::EC, TT - Other::TT, AOS - Other::AOS, LI - Other::LI>;
+
+        using inverse = Dimensions<-t, -l, -m, -ec, -tt, -aos, -li>;
 };
 
 using Time              = Dimensions<1,  0,  0,  0,  0,  0,  0>; 

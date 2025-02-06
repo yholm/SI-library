@@ -47,6 +47,12 @@ void div() {
     auto result2 = a / 5.0;
 
     assert(result2 == Second(1.0));
+
+    auto b = Second(10.0);
+    auto result3 = 1 / b;
+
+    using Frequency = Dimensions<-1, 0, 0, 0, 0, 0, 0>;
+    assert(result3 == SIUnit<Frequency>(1.0/10.0));
     std::cout << "Division passed\n";
 }
 

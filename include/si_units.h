@@ -9,7 +9,7 @@ class SIUnit {
     public:
         double value;
 
-        constexpr SIUnit(double val) : value(val) {}
+        constexpr explicit SIUnit(double val) : value(val) {}
 
         template <typename OtherT>
         constexpr SIUnit<T> operator+(const SIUnit<OtherT>& other) {
@@ -83,6 +83,11 @@ static Mole operator"" _mol(long double val) {
 
 static Candela operator"" _cd(long double val) {
 	return Candela(static_cast<double>(val));
+}
+
+template <typename T>
+constexpr SIUnit<typename T::inverse> operator/(double x, const SIUnit<T>& y) {
+    return SIUnit<typename T::inverse>{x / y.value};
 }
 
 #endif
