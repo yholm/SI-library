@@ -48,6 +48,30 @@ class SIUnit {
         constexpr bool operator==(const SIUnit<OtherT>& other) const {
             return (std::is_same_v<T, OtherT> && (value == other.value));
         }
+
+        template <typename OtherT>
+        constexpr bool operator>(const SIUnit<OtherT>& other) const {
+            static_assert(std::is_same_v<T, OtherT>, "Cannot compare SIUnits with different dimensions");
+
+            return (value > other.value);
+        }
+
+        template <typename OtherT>
+        constexpr bool operator<(const SIUnit<OtherT>& other) const {
+            static_assert(std::is_same_v<T, OtherT>, "Cannot compare SIUnits with different dimensions");
+
+            return (value < other.value);
+        }
+
+        template <typename OtherT>
+        constexpr bool operator<=(const SIUnit<OtherT>& other) const {
+            return !(*this > other);
+        }
+
+        template <typename OtherT>
+        constexpr bool operator>=(const SIUnit<OtherT>& other) const {
+            return !(*this < other);
+        }
 };
 
 using Second    = SIUnit<Time>;
