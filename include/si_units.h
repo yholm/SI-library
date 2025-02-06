@@ -3,6 +3,7 @@
 
 #include "dimensions.h"
 #include <stdexcept>
+#include <iostream>
 
 template <typename T>
 class SIUnit {
@@ -88,6 +89,12 @@ static Candela operator"" _cd(long double val) {
 template <typename T>
 constexpr SIUnit<typename T::inverse> operator/(double x, const SIUnit<T>& y) {
     return SIUnit<typename T::inverse>{x / y.value};
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const SIUnit<T>& unit) {
+    os << unit.value << " [" << T::symbolStr() << "]";
+    return os;
 }
 
 #endif

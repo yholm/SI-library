@@ -20,7 +20,11 @@ target_link_libraries(arithmetic_tests PRIVATE si_units)
 add_executable(literal_tests tests/si_literals.cpp)
 target_link_libraries(literal_tests PRIVATE si_units)
 
+add_executable(string_tests tests/si_string.cpp)
+target_link_libraries(string_tests PRIVATE si_units)
+
 add_test(NAME AritmeticTests COMMAND arithmetic_tests)
 add_test(NAME LiteralTests COMMAND literal_tests)
+add_test(NAME StringTests COMMAND string_tests)
 
 include(CPack)
