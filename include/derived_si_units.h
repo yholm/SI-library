@@ -17,7 +17,7 @@ using Newton    = SIUnit<Force>;
 using Pascal    = SIUnit<Pressure>;
 using Joule     = SIUnit<Energy>;
 using Watt      = SIUnit<Power>;
-using Coulomb  = SIUnit<ElectricCharge>;
+using Coulomb   = SIUnit<ElectricCharge>;
 using Volt      = SIUnit<ElectricPotential>;
 using Ohm       = SIUnit<ElectricResistance>;
 

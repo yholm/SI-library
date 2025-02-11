@@ -17,3 +17,17 @@ Simply include the headers in your project:
 ```cpp
 #include "si_units.h"           // For base implementation
 #include "derived_si_units.h"   // For derived unit definitions
+```
+
+## Examples
+- **Defining new types:**
+    ```cpp
+    #include "si_units.h"
+
+    // Using decltype
+    using Hertz = decltype(1 / 1.0_s);
+
+    // Defining with dimensions
+    using ElectricCharge = Time::multiply<ElectricCurrent>;
+    using Coulomb = SIUnit<ElectricCharge>
+    ```
