@@ -21,31 +21,31 @@ using Coulomb   = SIUnit<ElectricCharge>;
 using Volt      = SIUnit<ElectricPotential>;
 using Ohm       = SIUnit<ElectricResistance>;
 
-static Hertz operator"" _Hz(long double val) {
+constexpr Hertz operator"" _Hz(long double val) {
     return Hertz(static_cast<double>(val));
 }
 
-static Newton operator"" _N(long double val) {
+constexpr Newton operator"" _N(long double val) {
     return Newton(static_cast<double>(val));
 }
 
-static Pascal operator"" _Pa(long double val) {
+constexpr Pascal operator"" _Pa(long double val) {
     return Pascal(static_cast<double>(val));
 }
 
-static Joule operator"" _J(long double val) {
+constexpr Joule operator"" _J(long double val) {
     return Joule(static_cast<double>(val));
 }
 
-static Watt operator"" _W(long double val) {
+constexpr Watt operator"" _W(long double val) {
     return Watt(static_cast<double>(val));
 }
 
-static Coulomb operator"" _C(long double val) {
+constexpr Coulomb operator"" _C(long double val) {
     return Coulomb(static_cast<double>(val));
 }
 
-static Volt operator"" _V(long double val) {
+constexpr Volt operator"" _V(long double val) {
     return Volt(static_cast<double>(val));
 }
 
