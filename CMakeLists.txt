@@ -27,4 +27,13 @@ add_test(NAME AritmeticTests COMMAND arithmetic_tests)
 add_test(NAME LiteralTests COMMAND literal_tests)
 add_test(NAME StringTests COMMAND string_tests)
 
+install(TARGETS SIUnits
+        EXPORT SIUnitsConfig
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin)
+
+install(DIRECTORY include/ DESTINATION include)
+install(EXPORT SIUnitsConfig DESTINATION lib/cmake/SIUnits)
+
 include(CPack)
